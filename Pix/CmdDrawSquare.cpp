@@ -1,6 +1,7 @@
 #include "CmdDrawSquare.h"
 
 #include "Rasterizer.h"
+#include "VariableCache.h"
 
 bool CmdDrawSquare::Execute(const std::vector<std::string>& params)
 {
@@ -8,12 +9,12 @@ bool CmdDrawSquare::Execute(const std::vector<std::string>& params)
 	if (params.size() < 4)
 		return false;
 
-	int left = stoi(params[0]);
-	int top = stoi(params[1]);
-	int right = stoi(params[2]);
-	int bottom = stoi(params[3]);
+	int left = VariableCache::Get()->GetFloat(params[0]);
+	int top = VariableCache::Get()->GetFloat(params[1]);
+	int right = VariableCache::Get()->GetFloat(params[2]);
+	int bottom = VariableCache::Get()->GetFloat(params[3]);
 
-	// Draw the pixel
+	// Draw the pixels
 	for (int x = left; x <= right; x++)
 	{
 		for (int y = top; y <= bottom; y++)

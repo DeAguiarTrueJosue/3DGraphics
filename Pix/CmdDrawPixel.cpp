@@ -1,6 +1,7 @@
 #include "CmdDrawPixel.h"
 
 #include "Rasterizer.h"
+#include "VariableCache.h"
 
 bool CmdDrawPixel::Execute(const std::vector<std::string>& params)
 {
@@ -8,8 +9,8 @@ bool CmdDrawPixel::Execute(const std::vector<std::string>& params)
 	if (params.size() < 2)
 		return false;
 
-	int positionX = stoi(params[0]);
-	int positionY = stoi(params[1]);
+	int positionX = VariableCache::Get()->GetFloat(params[0]);
+	int positionY = VariableCache::Get()->GetFloat(params[1]);
 
 	// Draw the pixel
 	Rasterizer::Get()->DrawPoint(positionX, positionY);

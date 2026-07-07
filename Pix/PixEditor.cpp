@@ -68,6 +68,7 @@ void PixEditor::Initialize()
 
 void PixEditor::Terminate()
 {
+	VariableCache::Get()->Clear();
 }
 
 bool PixEditor::Run(float deltaTime)

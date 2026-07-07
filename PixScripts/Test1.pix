@@ -8,3 +8,16 @@ SetColor(1, 1, 0.1)
 DrawSquare(3,3,16,16)
 DrawSquare(6, 2, 13, 17)
 DrawSquare(2, 6, 17, 13)
+
+float $r = 0, 0.001, 0, 1
+float $g = 0, 0.001, 0, 1
+float $b = 0, 0.001, 0, 1
+SetColor($r, $g, $b)
+DrawSquare(5, 5, 14, 14)
+
+
+
+
+
+
+
