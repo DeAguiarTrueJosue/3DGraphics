@@ -1,2 +1,0 @@
-D:\PeterStuff\SIEGE\Main\External\DirectXTK\Bin\Desktop_2019\Win32\Debug\DirectXTK.lib
-D:\PeterStuff\SIEGE\Main\External\DirectXTK\Bin\Desktop_2019\Win32\Debug\DirectXTK.pdb
