@@ -8,7 +8,7 @@ struct Vector3
 	Vector3(float s) : x(s), y(s), z(s) {};
 	Vector3(float x, float y) : x(x), y(y), z(0) {};
 	Vector3(float x, float y, float z) : x(x), y(y), z(z) {};
-	Vector3(Vector3& v) : x(v.x), y(v.y), z(v.z) {};
+	Vector3(const Vector3& v) : x(v.x), y(v.y), z(v.z) {};
 
 	//opp
 
