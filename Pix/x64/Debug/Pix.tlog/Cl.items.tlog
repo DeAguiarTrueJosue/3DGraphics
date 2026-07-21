@@ -1,9 +1,12 @@
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\Clipper.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\Clipper.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdBeginDraw.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdBeginDraw.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdDrawPixel.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdDrawPixel.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdEndDraw.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdEndDraw.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetClipping.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetColor.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetFillMode.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetFillMode.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetResolution.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetResolution.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetViewport.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetViewport.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdVarFloat.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdVarFloat.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdVertex.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdVertex.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CommandDictionary.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CommandDictionary.obj
