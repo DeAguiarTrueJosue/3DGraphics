@@ -1,7 +1,10 @@
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\Camera.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\Camera.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\Clipper.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\Clipper.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdBeginDraw.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdBeginDraw.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdCamera.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdCamera.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdDrawPixel.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdDrawPixel.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdEndDraw.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdEndDraw.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdMatrixStack.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdMatrixStack.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetClipping.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetColor.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetColor.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetFillMode.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetFillMode.obj
@@ -13,6 +16,7 @@ C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CommandDictionary.cpp;C:\Users\joc
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdDrawSquare.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdDrawSquare.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\Graphics.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\Graphics.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\MathHelper.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\MathHelper.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\MatrixStack.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\MatrixStack.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\PixEditor.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\PixEditor.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\PrimitivesManager.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\PrimitivesManager.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\Rasterizer.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\Rasterizer.obj

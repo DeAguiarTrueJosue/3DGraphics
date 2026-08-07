@@ -10,6 +10,7 @@ namespace MathHelper
 	constexpr float RadToDeg = 180 / 3.1415926;
 
 	bool CheckEqual(float a, float b);
+	void FlattenVectorScreenCoord(Vector3& v);
 
 	float MagnetudeSquared(const Vector2& v);
 	float MagnetudeSquared(const Vector3& v);
@@ -20,8 +21,8 @@ namespace MathHelper
 	Vector2 Normalize(const Vector2& v);
 	Vector3 Normalize(const Vector3& v);
 
-	float Dot(const Vector2& a, Vector2& b);
-	float Dot(const Vector3& a, Vector3& b);
+	float Dot(const Vector2& a, const Vector2& b);
+	float Dot(const Vector3& a, const Vector3& b);
 
 	Vector3 Cross(const Vector3& a, const Vector3& b);
 

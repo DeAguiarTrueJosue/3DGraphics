@@ -6,6 +6,12 @@ bool MathHelper::CheckEqual(float a, float b)
 	return abs((float)(a - b)) < 0.001f;
 }
 
+void MathHelper::FlattenVectorScreenCoord(Vector3& v)
+{
+	v.x = floor(v.x + 0.5f);
+	v.y = floor(v.y + 0.5f);
+}
+
 float MathHelper::MagnetudeSquared(const Vector2& v)
 {
 	return v.x * v.x + v.y * v.y;
@@ -33,11 +39,11 @@ Vector3 MathHelper::Normalize(const Vector3& v)
 	return v / Magnetude(v);
 }
 
-float MathHelper::Dot(const Vector2& a, Vector2& b)
+float MathHelper::Dot(const Vector2& a, const Vector2& b)
 {
 	return a.x * b.x + a.y * b.y;
 }
-float MathHelper::Dot(const Vector3& a, Vector3& b)
+float MathHelper::Dot(const Vector3& a, const Vector3& b)
 {
 	return a.x * b.x + a.y * b.y + a.z * b.z;
 }

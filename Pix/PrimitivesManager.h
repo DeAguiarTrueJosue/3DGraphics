@@ -14,7 +14,7 @@ class PrimativesManager
 public:
 	static PrimativesManager* Get();
 
-	bool BeginDraw(Topology topology);
+	bool BeginDraw(Topology topology, bool applyTransform);
 
 	void AddVertex(const Vertex& v);
 
@@ -26,4 +26,5 @@ private:
 	std::vector<Vertex> mVertexBuffer;
 	Topology mTopology = Topology::Point;
 	bool mDrawBegin = false;
+	bool mApplyTransform = false;
 };
