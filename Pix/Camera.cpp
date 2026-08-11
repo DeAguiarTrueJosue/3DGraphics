@@ -14,7 +14,7 @@ void Camera::OnNewFrame()
 	mPosition = { 0,0,0 };
 	mDirection = { 0,0,1 };
 	mNearPlane = 0.01f;
-	mNearPlane = 100;
+	mFarPlane = 100;
 	mFOV = 1.57f;
 }
 
@@ -55,7 +55,7 @@ Matrix4 Camera::GetViewMatrix() const
 		r.x, u.x, l.x, 0,
 		r.y, u.y, l.y, 0,
 		r.z, u.z, l.z, 0,
-		  a,   b,   c, 0
+		  a,   b,   c, 1
 	};
 }
 

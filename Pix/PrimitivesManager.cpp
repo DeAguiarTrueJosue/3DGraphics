@@ -21,6 +21,30 @@ namespace
 			hw, hh,  0, 1
 		};
 	}
+	Vector3 CreateFaceNormal(const std::vector<Vertex>& triangle)
+	{
+		const Vector3 a = triangle[0].pos;
+		const Vector3 b = triangle[1].pos;
+		const Vector3 c = triangle[2].pos;
+		Vector3 norm = MathHelper::Normalize(MathHelper::Cross((b - a), (c - a)));
+		return norm;
+	}
+	bool CullTriangle(CullMode mode, const std::vector<Vertex>& triangle)
+	{
+		if (mode == CullMode::NONE)
+		{
+			return false;
+		}
+		Vector3 faceNormal = CreateFaceNormal(triangle);
+		if (mode == CullMode::BACK)
+		{
+			return faceNormal.z > 0;
+		}
+		else
+		{
+			return faceNormal.z < 0;
+		}
+	}
 }
 
 PrimativesManager::PrimativesManager() {}
@@ -29,6 +53,16 @@ PrimativesManager* PrimativesManager::Get()
 {
 	static PrimativesManager sInstance;
 	return &sInstance;
+}
+
+void PrimativesManager::OnNewFrame()
+{
+	mCullMode = CullMode::BACK;
+}
+
+void PrimativesManager::SetCullMode(CullMode cullMode)
+{
+	mCullMode = cullMode;
 }
 
 bool PrimativesManager::BeginDraw(Topology topology, bool applyTransform)
@@ -63,7 +97,9 @@ void PrimativesManager::EndDraw()
 
 	Matrix4 matScreen = GetScreenTransform();
 
-	Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+	//Matrix4 matFinal = matWorld * matView * matProj * matScreen;
+
+	Matrix4 matNDCSpace = matWorld * matView * matProj;
 
 	switch (mTopology)
 	{
@@ -99,7 +135,17 @@ void PrimativesManager::EndDraw()
 			{
 				for (size_t j = 0; j < triangle.size(); j++)
 				{
-					triangle[j].pos = MathHelper::TransformCoord(triangle[j].pos, matFinal);
+					triangle[j].pos = MathHelper::TransformCoord(triangle[j].pos, matNDCSpace);
+				}
+
+				if (CullTriangle(mCullMode, triangle))
+				{
+					continue;
+				}
+
+				for (size_t j = 0; j < triangle.size(); j++)
+				{
+					triangle[j].pos = MathHelper::TransformCoord(triangle[j].pos, matScreen);
 					MathHelper::FlattenVectorScreenCoord(triangle[j].pos);
 				}
 			}

@@ -26,13 +26,13 @@ class CmdPushRotationX : public Command
 public:
 	const char* GetName() override
 	{
-		return "PushRotationx";
+		return "PushRotationX";
 	}
 
 	const char* GetDescription() override
 	{
 		return
-			"PushRotationx(degrees)\n"
+			"PushRotationX(degrees)\n"
 			"\n"
 			"- pushes a rotation around the X axis matrix to the matrix stack";
 	}
@@ -45,13 +45,13 @@ class CmdPushRotationY : public Command
 public:
 	const char* GetName() override
 	{
-		return "PushRotationx";
+		return "PushRotationY";
 	}
 
 	const char* GetDescription() override
 	{
 		return
-			"PushRotationx(degrees)\n"
+			"PushRotationY(degrees)\n"
 			"\n"
 			"- pushes a rotation around the Y axis matrix to the matrix stack";
 	}
@@ -64,13 +64,13 @@ class CmdPushRotationZ : public Command
 public:
 	const char* GetName() override
 	{
-		return "PushRotationx";
+		return "PushRotationZ";
 	}
 
 	const char* GetDescription() override
 	{
 		return
-			"PushRotationx(degrees)\n"
+			"PushRotationZ(degrees)\n"
 			"\n"
 			"- pushes a rotation around the Z axis matrix to the matrix stack";
 	}

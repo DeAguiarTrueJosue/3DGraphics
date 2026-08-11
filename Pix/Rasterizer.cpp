@@ -1,4 +1,5 @@
 #include "Rasterizer.h"
+#include "DepthBuffer.h"
 
 void DrawLineHorizontal(const Vertex& left, const Vertex& right)
 {
@@ -49,7 +50,10 @@ void Rasterizer::DrawPoint(int x, int y)
 
 void Rasterizer::DrawPoint(const Vertex& v)
 {
-	X::DrawPixel(v.pos.x, v.pos.y, v.color);
+	if (DepthBuffer::Get()->CheckDepthBuffer(v.pos.x, v.pos.y, v.pos.z))
+	{
+		X::DrawPixel(v.pos.x, v.pos.y, v.color);
+	}
 }
 
 void Rasterizer::DrawLine(const Vertex& a, const Vertex& b)
@@ -91,7 +95,7 @@ void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 		DrawLine(b, c);
 		DrawLine(c, a);
 	}
-		break;
+	break;
 	case FillMode::Solid:
 	{
 		std::vector<Vertex> sortedVertices = { a, b, c };
@@ -99,7 +103,7 @@ void Rasterizer::DrawTriangle(const Vertex& a, const Vertex& b, const Vertex& c)
 			[](const Vertex& lhs, const Vertex& rhs) {return lhs.pos.y < rhs.pos.y; });
 		DrawFilledTriangle(sortedVertices[0], sortedVertices[1], sortedVertices[2]);
 	}
-		break;
+	break;
 	default:
 		break;
 	}
@@ -120,7 +124,7 @@ void Rasterizer::DrawFilledTriangle(const Vertex& a, const Vertex& b, const Vert
 			DrawLine(left, right);
 		}
 	}
-	else if(MathHelper::CheckEqual(b.pos.y, c.pos.y))
+	else if (MathHelper::CheckEqual(b.pos.y, c.pos.y))
 	{
 		int startY = static_cast<int>(a.pos.y);
 		int endY = static_cast<int>(c.pos.y);
