@@ -15,8 +15,8 @@ namespace MathHelper
 	float MagnetudeSquared(const Vector2& v);
 	float MagnetudeSquared(const Vector3& v);
 
-	float Magnetude(const Vector2& v);
-	float Magnetude(const Vector3& v);
+	float Magnitude(const Vector2& v);
+	float Magnitude(const Vector3& v);
 
 	Vector2 Normalize(const Vector2& v);
 	Vector3 Normalize(const Vector3& v);

@@ -21,22 +21,22 @@ float MathHelper::MagnetudeSquared(const Vector3& v)
 	return v.x * v.x + v.y * v.y + v.z * v.z;
 }
 
-float MathHelper::Magnetude(const Vector2& v)
+float MathHelper::Magnitude(const Vector2& v)
 {
 	return sqrt(v.x * v.x + v.y * v.y);
 }
-float MathHelper::Magnetude(const Vector3& v)
+float MathHelper::Magnitude(const Vector3& v)
 {
 	return sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
 }
 
 Vector2 MathHelper::Normalize(const Vector2& v)
 {
-	return v / Magnetude(v);
+	return v / Magnitude(v);
 }
 Vector3 MathHelper::Normalize(const Vector3& v)
 {
-	return v / Magnetude(v);
+	return v / Magnitude(v);
 }
 
 float MathHelper::Dot(const Vector2& a, const Vector2& b)

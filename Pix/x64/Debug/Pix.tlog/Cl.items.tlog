@@ -5,6 +5,8 @@ C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdCamera.cpp;C:\Users\jocan\OneDr
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdDrawPixel.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdDrawPixel.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdEnableDepth.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdEnableDepth.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdEndDraw.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdEndDraw.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdLight.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdLight.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdMaterial.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdMaterial.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdMatrixStack.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdMatrixStack.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetClipping.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetClipping.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdSetColor.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdSetColor.obj
@@ -20,6 +22,9 @@ C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CommandDictionary.cpp;C:\Users\joc
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\CmdDrawSquare.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\CmdDrawSquare.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\DepthBuffer.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\DepthBuffer.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\Graphics.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\Graphics.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\LightManager.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\LightManager.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\LightTypes.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\LightTypes.obj
+C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\MaterialManager.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\MaterialManager.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\MathHelper.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\MathHelper.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\MatrixStack.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\MatrixStack.obj
 C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\PixEditor.cpp;C:\Users\jocan\OneDrive\GitHub\3DGraphics\Pix\x64\Debug\PixEditor.obj

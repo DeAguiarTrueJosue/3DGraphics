@@ -3,6 +3,7 @@
 #include "Clipper.h"
 #include "MatrixStack.h"
 #include "Camera.h"
+#include "LightManager.h"
 
 extern float gResolutionX;
 extern float gResolutionY;
@@ -99,7 +100,7 @@ void PrimativesManager::EndDraw()
 
 	//Matrix4 matFinal = matWorld * matView * matProj * matScreen;
 
-	Matrix4 matNDCSpace = matWorld * matView * matProj;
+	Matrix4 matNDCSpace = matView * matProj;
 
 	switch (mTopology)
 	{
@@ -133,6 +134,18 @@ void PrimativesManager::EndDraw()
 
 			if (mApplyTransform)
 			{
+				for (size_t j = 0; j < triangle.size(); j++)
+				{
+					triangle[j].pos = MathHelper::TransformCoord(triangle[j].pos, matWorld);
+				}
+
+				Vector3 faceNorm = CreateFaceNormal(triangle);
+
+				for (size_t j = 0; j < triangle.size(); j++)
+				{
+					triangle[j].color *= LightManager::Get()->ComputeLightColor(triangle[j].pos, faceNorm);
+				}
+
 				for (size_t j = 0; j < triangle.size(); j++)
 				{
 					triangle[j].pos = MathHelper::TransformCoord(triangle[j].pos, matNDCSpace);
