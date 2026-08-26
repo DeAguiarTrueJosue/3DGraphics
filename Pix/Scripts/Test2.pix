@@ -1,0 +1,13 @@
+SetResolution(20, 20, 30, true)
+
+SetFillMode(solid)
+BeginDraw(triangle)
+
+float $height = 19, 0.1, 0, 19
+
+Vertex(0,0,0,1,1)
+Vertex($height, $height, 1, 1, 0)
+Vertex(19, 0, 1, 0, 1)
+
+EndDraw()
+

@@ -16,6 +16,6 @@ bool CmdSetCullMode::Execute(const std::vector<std::string>&params)
 	else if (params[0] == "front") { cullMode = CullMode::FRONT; }
 	else { return false; }
 
-	PrimativesManager::Get()->SetCullMode(cullMode);
+	PrimitivesManager::Get()->SetCullMode(cullMode);
 	return true;
 }

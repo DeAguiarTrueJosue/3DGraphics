@@ -15,7 +15,7 @@ void Graphics::NewFrame()
 	Clipper::Get()->OnNewFrame();
 	MatrixStack::Get()->OnNewFrame();
 	Camera::Get()->OnNewFrame();
-	PrimativesManager::Get()->OnNewFrame();
+	PrimitivesManager::Get()->OnNewFrame();
 	DepthBuffer::Get()->OnNewFrame();
 	MaterialManager::Get()->OnNewFrame();
 	LightManager::Get()->OnNewFrame();

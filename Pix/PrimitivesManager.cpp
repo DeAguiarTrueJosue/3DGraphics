@@ -48,25 +48,25 @@ namespace
 	}
 }
 
-PrimativesManager::PrimativesManager() {}
+PrimitivesManager::PrimitivesManager() {}
 
-PrimativesManager* PrimativesManager::Get()
+PrimitivesManager* PrimitivesManager::Get()
 {
-	static PrimativesManager sInstance;
+	static PrimitivesManager sInstance;
 	return &sInstance;
 }
 
-void PrimativesManager::OnNewFrame()
+void PrimitivesManager::OnNewFrame()
 {
 	mCullMode = CullMode::BACK;
 }
 
-void PrimativesManager::SetCullMode(CullMode cullMode)
+void PrimitivesManager::SetCullMode(CullMode cullMode)
 {
 	mCullMode = cullMode;
 }
 
-bool PrimativesManager::BeginDraw(Topology topology, bool applyTransform)
+bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
 {
 	mVertexBuffer.clear();
 	mTopology = topology;
@@ -75,7 +75,7 @@ bool PrimativesManager::BeginDraw(Topology topology, bool applyTransform)
 	return true;
 }
 
-void PrimativesManager::AddVertex(const Vertex& v)
+void PrimitivesManager::AddVertex(const Vertex& v)
 {
 	if (mDrawBegin)
 	{
@@ -83,7 +83,7 @@ void PrimativesManager::AddVertex(const Vertex& v)
 	}
 }
 
-void PrimativesManager::EndDraw()
+void PrimitivesManager::EndDraw()
 {
 	if (!mDrawBegin)
 	{
@@ -101,6 +101,8 @@ void PrimativesManager::EndDraw()
 	//Matrix4 matFinal = matWorld * matView * matProj * matScreen;
 
 	Matrix4 matNDCSpace = matView * matProj;
+
+	ShadeMode shadeMode = Rasterizer::Get()->GetShadeMode();
 
 	switch (mTopology)
 	{
@@ -134,16 +136,37 @@ void PrimativesManager::EndDraw()
 
 			if (mApplyTransform)
 			{
+
+				if (MathHelper::CheckEqual(MathHelper::MagnetudeSquared(triangle[0].normal), 0))
+				{
+					Vector3 faceNorm = CreateFaceNormal(triangle);
+
+					for (size_t j = 0; j < triangle.size(); j++)
+					{
+						triangle[j].normal = faceNorm;
+					}
+				}
+
 				for (size_t j = 0; j < triangle.size(); j++)
 				{
 					triangle[j].pos = MathHelper::TransformCoord(triangle[j].pos, matWorld);
+					triangle[j].worldPos = triangle[j].pos;
+					triangle[j].normal = MathHelper::TransformNormal(triangle[j].normal, matWorld);
 				}
 
-				Vector3 faceNorm = CreateFaceNormal(triangle);
-
-				for (size_t j = 0; j < triangle.size(); j++)
+				if (shadeMode == ShadeMode::Flat)
 				{
-					triangle[j].color *= LightManager::Get()->ComputeLightColor(triangle[j].pos, faceNorm);
+					X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].pos, triangle[0].normal);
+					triangle[0].color *= lightColor;
+					triangle[1].color *= lightColor;
+					triangle[2].color *= lightColor;
+				}
+				else if (shadeMode == ShadeMode::Gouraud)
+				{
+					for (size_t j = 0; j < triangle.size(); j++)
+					{
+						triangle[j].color *= LightManager::Get()->ComputeLightColor(triangle[j].pos, triangle[j].normal);
+					}
 				}
 
 				for (size_t j = 0; j < triangle.size(); j++)

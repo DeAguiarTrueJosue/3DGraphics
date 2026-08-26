@@ -40,6 +40,6 @@ bool CmdVertex::Execute(const std::vector<std::string>& params)
 	}
 
 
-	PrimativesManager::Get()->AddVertex(v);
+	PrimitivesManager::Get()->AddVertex(v);
 	return true;
 }

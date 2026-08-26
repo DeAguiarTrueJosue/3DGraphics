@@ -172,6 +172,12 @@
       <Filter>Commands</Filter>
     </ClCompile>
     <ClCompile Include="LightTypes.cpp" />
+    <ClCompile Include="CmdSetShadeMode.cpp" />
+    <ClCompile Include="Model.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelManager.cpp" />
+    <ClCompile Include="CmdModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TextEditor.h">
@@ -299,6 +305,18 @@
     </ClInclude>
     <ClInclude Include="LightTypes.h">
       <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdSetShadeMode.h">
+      <Filter>Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelManager.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="CmdModel.h">
+      <Filter>Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

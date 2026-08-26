@@ -69,9 +69,34 @@ bool CmdAddPointLight::Execute(const std::vector<std::string>& params)
 	float z = vc->GetFloat(params[2]);
 
 	float kConstant = (params.size() > 3) ? vc->GetFloat(params[3]) : 1.0f;
-	float kLinear = (params.size() > 4) ? vc->GetFloat(params[4]) : 1.0f;
+	float kLinear = (params.size() > 4) ? vc->GetFloat(params[4]) : 0.0f;
 	float kQuadratic = (params.size() > 5) ? vc->GetFloat(params[5]) : 1.0f;
 
 	LightManager::Get()->AddPointLight({ x,y,z }, kConstant, kLinear, kQuadratic);
+	return true;
+}
+
+bool CmdAddSpotLight::Execute(const std::vector<std::string>& params)
+{
+	if (params.size() < 6) {
+		return false;
+	}
+
+	VariableCache* vc = VariableCache::Get();
+	float px = vc->GetFloat(params[0]);
+	float py = vc->GetFloat(params[1]);
+	float pz = vc->GetFloat(params[2]);
+
+	float dx = vc->GetFloat(params[3]);
+	float dy = vc->GetFloat(params[4]);
+	float dz = vc->GetFloat(params[5]);
+
+	float kConstant = (params.size() > 3) ? vc->GetFloat(params[6]) : 1.0f;
+	float kLinear = (params.size() > 4) ? vc->GetFloat(params[7]) : 0.0f;
+	float kQuadratic = (params.size() > 5) ? vc->GetFloat(params[8]) : 1.0f;
+	float kAngle = (params.size() > 5) ? vc->GetFloat(params[8]) : 20.0f;
+	float kDecay = (params.size() > 5) ? vc->GetFloat(params[8]) : 0.0f;
+
+	LightManager::Get()->AddSpotLight({ px,py,pz }, { dx,dy,dz }, kConstant, kLinear, kQuadratic, kAngle, kDecay);
 	return true;
 }

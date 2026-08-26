@@ -16,10 +16,10 @@ enum class CullMode
 	FRONT
 };
 
-class PrimativesManager
+class PrimitivesManager
 {
 public:
-	static PrimativesManager* Get();
+	static PrimitivesManager* Get();
 
 	void OnNewFrame();
 
@@ -32,7 +32,7 @@ public:
 	void EndDraw();
 
 private:
-	PrimativesManager();
+	PrimitivesManager();
 
 	std::vector<Vertex> mVertexBuffer;
 	Topology mTopology = Topology::Point;

@@ -4,6 +4,6 @@
 
 bool CmdEndDraw::Execute(const std::vector<std::string>& params)
 {
-	PrimativesManager::Get()->EndDraw();
+	PrimitivesManager::Get()->EndDraw();
 	return true;
 }
