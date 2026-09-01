@@ -134,3 +134,15 @@ float MathHelper::Determinant(const Matrix4& m)
 	det -= (m._14 * (m._21 * (m._32 * m._43 - (m._42 * m._33)) - m._22 * (m._31 * m._43 - (m._41 * m._33)) + m._23 * (m._31 * m._42 - (m._41 * m._32))));
 	return det;
 }
+
+bool MathHelper::Intersect(const Ray& ray, const Sphere& sphere, float& distance)
+{
+	Vector3 v = ray.origin - sphere.origin;
+	float t = Dot(v, ray.direction);
+
+	Vector3 closestPoint = ray.origin + (ray.direction * t);
+	float closestPointToCenterSqr = MagnetudeSquared(closestPoint - sphere.radius);
+	float radiusSqr = ;
+
+	return false;
+}

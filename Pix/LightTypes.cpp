@@ -4,26 +4,26 @@
 
 X::Color DirectionalLight::ComputeLightColor(const Vector3& position, const Vector3& normal)
 {
-    Camera* camera = Camera::Get();
-    MaterialManager* mm = MaterialManager::Get();
+	Camera* camera = Camera::Get();
+	MaterialManager* mm = MaterialManager::Get();
 
-    X::Color ambient = mAmbient * mm->GetMaterialAmbient();
+	X::Color ambient = mAmbient * mm->GetMaterialAmbient();
 
-    Vector3 L = -mDirection;
-    float dot = X::Math::Max(MathHelper::Dot(L, normal), 0.0f);
-    X::Color diffuse = mDiffuse * mm->GetMaterialDiffuse() * dot;
+	Vector3 L = -mDirection;
+	float dot = X::Math::Max(MathHelper::Dot(L, normal), 0.0f);
+	X::Color diffuse = mDiffuse * mm->GetMaterialDiffuse() * dot;
 
-    Vector3 v = MathHelper::Normalize(camera->GetPosition() - position);
-    Vector3 r = MathHelper::Normalize(L + v);
-    float fallOff = X::Math::Max((float)pow(MathHelper::Dot(r, normal), mm->GetMaterialShininess()), 0.0f);
-    X::Color specular = mSpecular * mm->GetMaterialSpecular() * fallOff;
+	Vector3 v = MathHelper::Normalize(camera->GetPosition() - position);
+	Vector3 r = MathHelper::Normalize(L + v);
+	float fallOff = X::Math::Max((float)pow(MathHelper::Dot(r, normal), mm->GetMaterialShininess()), 0.0f);
+	X::Color specular = mSpecular * mm->GetMaterialSpecular() * fallOff;
 
-    return ambient + diffuse + specular;
+	return ambient + diffuse + specular;
 }
 
 void DirectionalLight::SetDirection(const Vector3& direction)
 {
-    mDirection = MathHelper::Normalize(direction);
+	mDirection = MathHelper::Normalize(direction);
 }
 
 X::Color PointLight::ComputeLightColor(const Vector3& position, const Vector3& normal) {
@@ -61,8 +61,7 @@ void PointLight::SetAttenuation(float kConstant, float kLinear, float kQuadratic
 	mKQuadratic = kQuadratic;
 }
 
-X::Color SpotLight::ComputeLightColor(const Vector3& position, const Vector3& normal)
-{
+X::Color SpotLight::ComputeLightColor(const Vector3& position, const Vector3& normal) {
 	Camera* camera = Camera::Get();
 	MaterialManager* mm = MaterialManager::Get();
 
@@ -70,12 +69,10 @@ X::Color SpotLight::ComputeLightColor(const Vector3& position, const Vector3& no
 	float distance = MathHelper::Magnitude(L);
 	L /= distance;
 
-	X::Color ambient = mAmbient * mm->GetMaterialAmbient();
-
 	Vector3 lightDir = -L;
+	X::Color ambient = mAmbient * mm->GetMaterialAmbient();
 	float dotDir = MathHelper::Dot(lightDir, mDirection);
-	if (dotDir < mCosAngle)
-	{
+	if (dotDir < mCosAngle) {
 		return ambient;
 	}
 
@@ -83,7 +80,6 @@ X::Color SpotLight::ComputeLightColor(const Vector3& position, const Vector3& no
 	float attenuation = spot / (mKConstant + (mKLinear * distance) + (mKQuadratic * distance * distance));
 	float iL = X::Math::Clamp(attenuation, 0.0f, 1.0f);
 
-	ambient = mAmbient * mm->GetMaterialAmbient();
 
 	float dot = X::Math::Max(MathHelper::Dot(L, normal), 0.0f);
 	X::Color diffuse = mDiffuse * mm->GetMaterialDiffuse() * dot * iL;
@@ -96,14 +92,14 @@ X::Color SpotLight::ComputeLightColor(const Vector3& position, const Vector3& no
 	return ambient + diffuse + specular;
 }
 
+void SpotLight::SetDirection(const Vector3& direction)
+{
+	mDirection = MathHelper::Normalize(direction);
+}
+
 void SpotLight::SetPosition(const Vector3& position)
 {
 	mPosition = position;
-}
-
-void SpotLight::SetDirection(const Vector3 & direction)
-{
-	mDirection = MathHelper::Normalize(direction);
 }
 
 void SpotLight::SetAttenuation(float kConstant, float kLinear, float kQuadratic)

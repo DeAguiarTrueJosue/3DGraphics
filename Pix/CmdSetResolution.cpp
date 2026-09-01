@@ -1,5 +1,6 @@
 #include "CmdSetResolution.h"
 #include "DepthBuffer.h"
+#include "PostProcessing.h"
 
 #include <XEngine.h>
 
@@ -31,6 +32,7 @@ bool CmdSetResolution::Execute(const std::vector<std::string>& params)
 		X::DrawScreenGrid(pixelSize, X::Colors::DarkGray);
 
 	DepthBuffer::Get()->Initialize(width, height);
+	PostProcessing::Get()->Initialize(width, height);
 
 	return true;
 }

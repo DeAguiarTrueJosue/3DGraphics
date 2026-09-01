@@ -59,6 +59,8 @@ void LightManager::AddSpotLight(const Vector3& position, const Vector3& directio
 	light->SetAttenuation(kConstant, kLinear, kQuadratic);
 	light->SetPosition(position);
 	light->SetDirection(direction);
+	light->SetAngle(kAngle);
+	light->SetDecay(kDecay);
 	mLights.push_back(std::move(light));
 }
 

@@ -1,0 +1,52 @@
+#include "RenderTarget.h"
+
+void RenderTarget::Initialize(int width, int height, const X::Color& clearColor)
+{
+	if (width != mWidth || height != mHeight)
+	{
+		mWidth = width;
+		mHeight = height;
+		mRenderPixels.reset();
+		mRenderPixels = std::make_unique<X::Color[]>(width * height);
+
+		ClearImage(clearColor);
+	}
+}
+
+void RenderTarget::ClearImage(const X::Color& clearColor)
+{
+	for (int i = 0; i < mHeight; i++)
+	{
+		for (int j = 0; j < mWidth; j++)
+		{
+			const int index = j + (i * mWidth);
+			mRenderPixels[index] = clearColor;
+		}
+	}
+}
+
+void RenderTarget::DrawPixel(int x, int y, const X::Color& color)
+{
+	if (x >= 0 && x < mWidth && y >= 0 && y < mHeight)
+	{
+		const int index = x + (y * mWidth);
+		mRenderPixels[index] = color;
+	}
+}
+
+const X::Color& RenderTarget::GetColor(int x, int y) const
+{
+	x = std::clamp(x, 0, mWidth - 1);
+	y = std::clamp(y, 0, mHeight - 1);
+	return mRenderPixels[y * mWidth + x];
+}
+
+int RenderTarget::GetWidth() const
+{
+	return mWidth;
+}
+
+int RenderTarget::GetHeight() const
+{
+	return mHeight;
+}

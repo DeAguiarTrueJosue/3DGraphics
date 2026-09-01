@@ -168,7 +168,12 @@
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdmaterial.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdlight.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetshademode.h",
-            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdmodel.h"
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdmodel.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsettexture.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetcorrectuv.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetusefilter.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetaddressmode.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdpostprocessing.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

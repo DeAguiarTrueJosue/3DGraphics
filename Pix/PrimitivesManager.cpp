@@ -59,11 +59,17 @@ PrimitivesManager* PrimitivesManager::Get()
 void PrimitivesManager::OnNewFrame()
 {
 	mCullMode = CullMode::BACK;
+	mCorrectUV = false;
 }
 
 void PrimitivesManager::SetCullMode(CullMode cullMode)
 {
 	mCullMode = cullMode;
+}
+
+void PrimitivesManager::SetCorrectUV(bool correctUV)
+{
+	mCorrectUV = correctUV;
 }
 
 bool PrimitivesManager::BeginDraw(Topology topology, bool applyTransform)
@@ -153,19 +159,31 @@ void PrimitivesManager::EndDraw()
 					triangle[j].worldPos = triangle[j].pos;
 					triangle[j].normal = MathHelper::TransformNormal(triangle[j].normal, matWorld);
 				}
-
-				if (shadeMode == ShadeMode::Flat)
+				if (triangle[0].color.z >= 0)
 				{
-					X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].pos, triangle[0].normal);
-					triangle[0].color *= lightColor;
-					triangle[1].color *= lightColor;
-					triangle[2].color *= lightColor;
-				}
-				else if (shadeMode == ShadeMode::Gouraud)
-				{
-					for (size_t j = 0; j < triangle.size(); j++)
+					if (shadeMode == ShadeMode::Flat)
 					{
-						triangle[j].color *= LightManager::Get()->ComputeLightColor(triangle[j].pos, triangle[j].normal);
+						X::Color lightColor = LightManager::Get()->ComputeLightColor(triangle[0].pos, triangle[0].normal);
+						triangle[0].color *= lightColor;
+						triangle[1].color *= lightColor;
+						triangle[2].color *= lightColor;
+					}
+					else if (shadeMode == ShadeMode::Gouraud)
+					{
+						for (size_t j = 0; j < triangle.size(); j++)
+						{
+							triangle[j].color *= LightManager::Get()->ComputeLightColor(triangle[j].pos, triangle[j].normal);
+						}
+					}
+				}
+				else if (mCorrectUV)
+				{
+					for (uint32_t j = 0; j < triangle.size(); j++)
+					{
+						Vector3 viewSpace = MathHelper::TransformCoord(triangle[j].worldPos, matView);
+						triangle[j].color.x /= viewSpace.z;
+						triangle[j].color.y /= viewSpace.z;
+						triangle[j].color.w = 1.0f / viewSpace.z;
 					}
 				}
 

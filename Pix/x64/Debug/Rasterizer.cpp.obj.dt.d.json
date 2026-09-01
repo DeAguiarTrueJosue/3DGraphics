@@ -272,7 +272,11 @@
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\depthbuffer.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\lightmanager.h",
-            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\light.h"
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\light.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\texturemanager.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\texture.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\postprocessing.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\rendertarget.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

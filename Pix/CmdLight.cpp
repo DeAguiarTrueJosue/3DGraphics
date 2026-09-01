@@ -91,11 +91,11 @@ bool CmdAddSpotLight::Execute(const std::vector<std::string>& params)
 	float dy = vc->GetFloat(params[4]);
 	float dz = vc->GetFloat(params[5]);
 
-	float kConstant = (params.size() > 3) ? vc->GetFloat(params[6]) : 1.0f;
-	float kLinear = (params.size() > 4) ? vc->GetFloat(params[7]) : 0.0f;
-	float kQuadratic = (params.size() > 5) ? vc->GetFloat(params[8]) : 1.0f;
-	float kAngle = (params.size() > 5) ? vc->GetFloat(params[8]) : 20.0f;
-	float kDecay = (params.size() > 5) ? vc->GetFloat(params[8]) : 0.0f;
+	float kConstant = (params.size() > 6) ? vc->GetFloat(params[6]) : 1.0f;
+	float kLinear = (params.size() > 7) ? vc->GetFloat(params[7]) : 0.0f;
+	float kQuadratic = (params.size() > 8) ? vc->GetFloat(params[8]) : 1.0f;
+	float kAngle = (params.size() > 9) ? vc->GetFloat(params[9]) : 20.0f;
+	float kDecay = (params.size() > 10) ? vc->GetFloat(params[10]) : 0.0f;
 
 	LightManager::Get()->AddSpotLight({ px,py,pz }, { dx,dy,dz }, kConstant, kLinear, kQuadratic, kAngle, kDecay);
 	return true;
