@@ -173,7 +173,8 @@
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetcorrectuv.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetusefilter.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdsetaddressmode.h",
-            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdpostprocessing.h"
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdpostprocessing.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\cmdraytrace.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

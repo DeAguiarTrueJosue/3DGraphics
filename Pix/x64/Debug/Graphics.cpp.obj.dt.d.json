@@ -19,6 +19,8 @@
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\sal.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\concurrencysal.h",
             "c:\\program files\\microsoft visual studio\\18\\community\\vc\\tools\\msvc\\14.51.36231\\include\\vadefs.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\ray.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\sphere.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\x\\inc\\xcolors.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\x\\inc\\xmath.h",
             "c:\\program files (x86)\\windows kits\\10\\include\\10.0.26100.0\\ucrt\\math.h",
@@ -280,7 +282,8 @@
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\x\\inc\\xtypes.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\light.h",
             "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\postprocessing.h",
-            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\rendertarget.h"
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\rendertarget.h",
+            "c:\\users\\jocan\\onedrive\\github\\3dgraphics\\pix\\raytracer.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
